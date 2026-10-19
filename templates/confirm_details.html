@@ -1,0 +1,125 @@
+
+{% extends "base.html" %}
+
+{% block title %}Confirm Truck & Driver Information{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <h2 class="mb-3">Confirm Truck & Driver Information</h2>
+
+    <p class="text-muted">
+        Please review the information captured at Canopy 1.
+    </p>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+
+            <h5 class="mb-3">Driver Information</h5>
+
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th>Driver Name</th>
+                        <td>{{ details.driver_name }}</td>
+                    </tr>
+                    <tr>
+                        <th>Passport Number</th>
+                        <td>{{ details.passport_number }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nationality</th>
+                        <td>{{ details.nationality }}</td>
+                    </tr>
+                    <tr>
+                        <th>Contact Number</th>
+                        <td>{{ details.contact_number }}</td>
+                    </tr>
+                    <tr>
+                        <th>Driver's Licence Number</th>
+                        <td>{{ details.licence_number }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h5 class="mt-4 mb-3">Truck Information</h5>
+
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th>Truck Registration Number</th>
+                        <td>{{ details.truck_registration }}</td>
+                    </tr>
+                    <tr>
+                        <th>Country of Registration</th>
+                        <td>{{ details.country_registration }}</td>
+                    </tr>
+                    <tr>
+                        <th>Make / Model</th>
+                        <td>{{ details.make_model }}</td>
+                    </tr>
+                    <tr>
+                        <th>Year</th>
+                        <td>{{ details.year }}</td>
+                    </tr>
+                    <tr>
+                        <th>Trailer Registration Number</th>
+                        <td>{{ details.trailer_registration }}</td>
+                    </tr>
+                    <tr>
+                        <th>Manifest Reference Number</th>
+                        <td>{{ details.manifest_reference }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-between mt-4">
+
+                <button type="button" id="editBtn"
+                class="btn btn-secondary"
+                onclick="toggleEdit()">
+                Edit Information
+                </button>
+                
+
+                <button type="button" class="btn btn-primary">
+                    Confirm & Continue
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+function toggleEdit() {
+    const button = document.getElementById("editBtn");
+    const cells = document.querySelectorAll("td");
+
+    if (button.textContent.trim() === "Edit Information") {
+
+        cells.forEach(cell => {
+            cell.contentEditable = "true";
+            cell.classList.add("table-warning");
+        });
+
+        button.textContent = "Save Changes";
+
+    } else {
+
+        cells.forEach(cell => {
+            cell.contentEditable = "false";
+            cell.classList.remove("table-warning");
+        });
+
+        button.textContent = "Edit Information";
+    }
+}
+</script>
+
+
+{% endblock %}
