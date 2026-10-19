@@ -5,22 +5,23 @@
 
 {% block content %}
 
-<div class="container">
-
+<div>
+    <header class="page-heading">
+        <div class="eyebrow">Canopy 01 · Arrival registration</div>
     <h2 class="mb-3">Canopy 1 - Truck Registration</h2>
-
     <p class="text-muted">
         Enter truck and driver information
     </p>
+    </header>
 
     <div class="card shadow-sm">
         <div class="card-body">
-
-            <h5 class="card-title mb-4">
-                Driver Information
-            </h5>
-
             <form action="{{ url_for('confirm') }}" method="POST">
+                <section class="form-section">
+                    <h5 class="card-title mb-4">
+                        <span class="section-number">01</span>
+                        Driver information
+                    </h5>
 
                 <div class="row mb-3">
                     <div class="col-md-6">
@@ -52,8 +53,13 @@
                         <input type="text" id="licence_number" name="licence_number" class="form-control" required>
                     </div>
                 </div>
+                </section>
 
-                <h5 class="mt-4 mb-3">Truck Information</h5>
+                <section class="form-section">
+                    <h5 class="mt-4 mb-3">
+                        <span class="section-number">02</span>
+                        Truck information
+                    </h5>
 
                 <div class="row mb-3">
                     <div class="col-md-6">
@@ -90,10 +96,13 @@
                         <input type="text" id="manifest_reference" name="manifest_reference" class="form-control" required>
                     </div>
                 </div>
+                </section>
 
-                <button type="submit" class="btn btn-primary">
-                Save & Continue
-                </button>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        Save &amp; Continue
+                    </button>
+                </div>
 
             </form>
 

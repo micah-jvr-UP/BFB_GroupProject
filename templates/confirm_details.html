@@ -5,19 +5,19 @@
 
 {% block content %}
 
-<div class="container">
-
-    <h2 class="mb-3">Confirm Truck & Driver Information</h2>
-
-    <p class="text-muted">
-        Please review the information captured at Canopy 1.
-    </p>
+<div>
+    <header class="page-heading">
+        <div class="eyebrow">Canopy 01 · Review details</div>
+        <h2>Confirm truck &amp; driver information</h2>
+        <p>Please review the information captured at Canopy 1.</p>
+    </header>
 
     <div class="card shadow-sm">
         <div class="card-body">
 
-            <h5 class="mb-3">Driver Information</h5>
-
+            <section class="review-section">
+                <h5><span class="section-number">01</span>Driver information</h5>
+                <div class="table-responsive">
             <table class="table table-bordered">
                 <tbody>
                     <tr>
@@ -42,9 +42,12 @@
                     </tr>
                 </tbody>
             </table>
+                </div>
+            </section>
 
-            <h5 class="mt-4 mb-3">Truck Information</h5>
-
+            <section class="review-section">
+                <h5><span class="section-number">02</span>Truck information</h5>
+                <div class="table-responsive">
             <table class="table table-bordered">
                 <tbody>
                     <tr>
@@ -73,15 +76,16 @@
                     </tr>
                 </tbody>
             </table>
+                </div>
+            </section>
 
-            <div class="d-flex justify-content-between mt-4">
+            <div class="review-actions d-flex justify-content-between">
 
                 <button type="button" id="editBtn"
                 class="btn btn-secondary"
                 onclick="toggleEdit()">
                 Edit Information
                 </button>
-                
 
                 <button type="button" class="btn btn-primary">
                     Confirm & Continue
