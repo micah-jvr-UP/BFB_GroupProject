@@ -270,6 +270,43 @@ form .row {
     outline-offset: -2px;
 }
 
+.goods-list {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    list-style: none;
+}
+
+.goods-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.85rem 1rem;
+    background-color: #fff;
+    color: var(--ink);
+    font-size: 0.9rem;
+}
+
+.goods-list li + li {
+    border-top: 1px solid var(--line);
+}
+
+.goods-list li::before {
+    flex: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    content: "";
+}
+
+.goods-other {
+    color: #59685f;
+    font-weight: 650;
+}
+
 .review-actions {
     gap: 0.75rem;
     margin-top: 1.75rem !important;

@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}Canopy 1 - Goods Registration{% endblock %}
+
+{% block content %}
+
+<div>
+    <header class="page-heading">
+        <div class="eyebrow">Canopy 01 · Arrival registration</div>
+    <h2 class="mb-3">Canopy 1 - Declare Goods</h2>
+    <p class="text-muted">
+        Select the goods you are carrying.
+    </p>
+    </header>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form action="{{ url_for('confirm_goods') }}" method="POST">
+                <section class="form-section">
+                    <h5 class="card-title mb-4">
+                        <span class="section-number">01</span>
+                        Common goods
+                    </h5>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <div class="form-check">
+                            <input type="checkbox" id="electronics" name="electronics" class="form-check-input" value="yes">
+                            <label for="electronics" class="form-check-label">Electronics</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="clothing_textiles" name="clothing_textiles" class="form-check-input" value="yes">
+                            <label for="clothing_textiles" class="form-check-label">Clothing & Textiles</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="food_beverages" name="food_beverages" class="form-check-input" value="yes">
+                            <label for="food_beverages" class="form-check-label">Food & Beverages</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="machinery_parts" name="machinery_parts" class="form-check-input" value="yes">
+                            <label for="machinery_parts" class="form-check-label">Machinery/Parts</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="chemicals" name="chemicals" class="form-check-input" value="yes">
+                            <label for="chemicals" class="form-check-label">Chemicals</label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-check">
+                            <input type="checkbox" id="automotive_parts" name="automotive_parts" class="form-check-input" value="yes">
+                            <label for="automotive_parts" class="form-check-label">Automotive Parts</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="plastics" name="plastics" class="form-check-input" value="yes">
+                            <label for="plastics" class="form-check-label">Plastics</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="building_materials" name="building_materials" class="form-check-input" value="yes">
+                            <label for="building_materials" class="form-check-label">Building Materials</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="furniture" name="furniture" class="form-check-input" value="yes">
+                            <label for="furniture" class="form-check-label">Furniture</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="paper_products" name="paper_products" class="form-check-input" value="yes">
+                            <label for="paper_products" class="form-check-label">Paper Product</label>
+                        </div>
+                    </div>
+                </div>
+                
+                </section>
+
+                <section class="form-section">
+                    <h5 class="mt-4 mb-3">
+                        <span class="section-number">02</span>
+                        Other goods (please specify)
+                    </h5>
+
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <label for="other_goods" class="form-label">Describe other goods</label>
+                        <input type="text" id="other_goods" name="other_goods" class="form-control">
+                    </div>
+                </div>
+                </section>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        Save &amp; Continue
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
