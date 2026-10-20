@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Confirm Goods List{% endblock %}
+
+{% block content %}
+
+{% set goods_list = [
+    ("electronics", "Electronics"),
+    ("clothing_textiles", "Clothing & Textiles"),
+    ("food_beverages", "Food & Beverages"),
+    ("machinery_parts", "Machinery / Parts"),
+    ("chemicals", "Chemicals"),
+    ("automotive_parts", "Automotive Parts"),
+    ("plastics", "Plastics"),
+    ("building_materials", "Building Materials"),
+    ("furniture", "Furniture"),
+    ("paper_products", "Paper Product")
+] %}
+
+<div>
+    <header class="page-heading">
+        <div class="eyebrow">Canopy 01 · Review goods</div>
+        <h2>Confirm goods list</h2>
+        <p>Please confirm the goods you have declared.</p>
+    </header>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+
+            <section class="review-section">
+                <h5><span class="section-number">01</span>Selected goods</h5>
+                <ul class="goods-list">
+                    {% for key, label in goods_list if goods.get(key) == "yes" %}
+                    <li>{{ label }}</li>
+                    {% endfor %}
+                    {% if goods.other_goods %}
+                    <li><span class="goods-other">Other:</span> {{ goods.other_goods }}</li>
+                    {% endif %}
+                </ul>
+            </section>
+
+            <div class="review-actions d-flex justify-content-between">
+
+                <button type="button" class="btn btn-secondary"
+                onclick="history.back()">
+                    Edit Information
+                </button>
+
+                <button type="button" class="btn btn-primary">
+                    Confirm &amp; Continue
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
